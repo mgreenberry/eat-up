@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Manager</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm extending the base template </h2>
+
     {% for catergory in catergories %}
         {{ catergory.food_group }} <br>
         {{ catergory.food_item }} <br>
         {{ catergory.food_id }} <br>
         {{ catergory.use_by_date }} <br>
     {% endfor %}
-</body>
-</html>
 
+{% endblock %}
