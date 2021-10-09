@@ -27,6 +27,24 @@ def catergories():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # chekc if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        if existing_user:
+            flash("Username already taken, please choose another")
+            return redirect(url_for("register"))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+        
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registeration Successful")
+
     return render_template("register.html")
 
 
