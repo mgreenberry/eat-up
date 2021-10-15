@@ -90,12 +90,18 @@ def profile(username):
 
     return render_template("profile.html", username=username)
 
+
 @app.route("/logout")
 def logout():
     # Logs user out
     flash("You have logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_food")
+def add_food():
+    return render_template("add_food.html")
 
 
 if __name__ == "__main__":
