@@ -8,22 +8,18 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="food_name" name="food_name" minlength="3" maxlength ="50" 
+                    <input id="food_group" name="food_group" minlength="3" maxlength ="50" 
                         type="text" class="validate" required>
-                    <label for="food_name">Add your food item:</label>
+                    <label for="food_group">Food Group</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                    <select id="food_group" name="food_group" class="validate" required>
-                        <option value="" disabled selected>Choose Food Group</option>
-                        {% for food in foods %}
-                            <option value="{{ food.food_group }}">{{ food.food_group }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="food_group">Food Group</label>
-                  </div>
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="food_name" name="food_name" minlength="3" maxlength ="50" 
+                        type="text" class="validate" required>
+                    <label for="food_name">Add your food item:</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">

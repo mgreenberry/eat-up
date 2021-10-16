@@ -8,22 +8,18 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="food_name" name="food_name" minlength="3" maxlength ="50" 
-                        type="text" class="validate" required>
-                    <label for="food_name">Add your food item:</label>
+                    <input id="food_group" name="food_group" minlength="3" maxlength ="50" 
+                    value="{{ foods.food_group }}" type="text" class="validate" required>
+                    <label for="food_group">Food Group</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
-                    <select id="food_group" name="food_group" class="validate" required>
-                        <option value="" disabled selected>Choose Food Group</option>
-                        {% for food in foods %}
-                            <option value="{{ food.food_group }}">{{ food.food_group }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="food_group">Food Group</label>
-                  </div>
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="food_name" name="food_name" minlength="3" maxlength ="50" 
+                        value="{{ foods.food_name }}" type="text" class="validate" required>
+                    <label for="food_name">Food Name</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -37,7 +33,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix light-blue-text text-darken-4"></i>
                     <input id="use_by_date" name="use_by_date" type="text" 
-                        class="datepicker" required>
+                        value="{{ foods.use_by_date }}" class="datepicker" required>
                     <label for="use_by_date">Use by Date:</label>
                 </div>
             </div>
