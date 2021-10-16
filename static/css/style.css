@@ -8,3 +8,10 @@
 .uppercase {
     text-transform:capitalize;
 }
+.btn-small {
+    margin: 5px;
+}
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;
+}

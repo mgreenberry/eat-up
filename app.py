@@ -107,7 +107,7 @@ def add_food():
             "food_name": request.form.get("food_name"),
             "food_group": request.form.get("food_group"),
             "use_by_date": request.form.get("use_by_date"),
-            "food_id": request.form.get("food_id"),
+            "food_id": request.form.get("food_no"),
             "is_urgent": is_urgent,
             "created_by": session["user"]
         }
@@ -117,6 +117,14 @@ def add_food():
         
     foods = mongo.db.catergories.find().sort("food_group", 1)
     return render_template("add_food.html", foods=foods)
+
+
+@app.route("/edit_food/<food_id>", methods=["GET", "POST"])
+def edit_food(food_id):
+    food = mongo.db.tasks.find_one({"_id": ObjectId(food_id)})
+
+    foods = mongo.db.catergories.find().sort("food_name", 1)
+    return render_template("edit_food.html", id=id, foods=foods)
 
 
 if __name__ == "__main__":

@@ -7,9 +7,14 @@
         {% for catergory in catergories %}
         <li>
           <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                <i class="fas fa-caret-down"></i>
-                <h4>Food Item: {{ catergory.food_name }}</h4><br>
-                <br>
+                <div class="col s3">
+                    <i class="fas fa-caret-down"></i>
+                    <a href="" class="btn-small green accent-4">Done</a>
+                    <a href="{{ url_for('edit_food', food_id=catergory._id) }}" class="btn-small blue accent-4">Edit</a>
+                </div>
+                <div class="col s9">
+                    <h4>Food Item: {{ catergory.food_name }}</h4>
+                </div>
             </div>
             <div class="collapsible-body">
                 <p>Use by Date: {{ catergory.use_by_date }}</p>
@@ -18,7 +23,7 @@
                         data-position="right" data-tooltip="USE ME"></a></i>
                 {% endif %}
                 <p><strong>Food Group: {{ catergory.food_group }}</strong></p>
-                <p>Barcode or ID No.: {{ catergory.food_id }}</p>
+                <p>Barcode or ID No.: {{ catergory.food_no }}</p>
                 <p><em>by: {{ catergory.created_by }}</em></p>
             </div>
         </li>
