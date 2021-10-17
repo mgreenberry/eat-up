@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-blue-text text-darken-4 center-align">Manage Food</h3>
+
+    <div class="row">
+        {% for modify in modifies %}
+            <div class="col s12 m3">
+                <div class="card light-blue darken-4 text-shadow center-align">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ modify.food_name}}</span>
+                        <span class="card-title">{{ modify.use_by_date }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

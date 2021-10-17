@@ -146,6 +146,12 @@ def delete_food(food_name):
     flash("Food Deleted")
     return redirect(url_for("catergories"))
 
+
+@app.route("/modifies")
+def modifies():
+    modifies = list(mongo.db.catergories.find().sort({"use-by-date": 1}))
+    return render_template("modifies.html", modifies=modifies)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
