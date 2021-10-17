@@ -149,7 +149,7 @@ def delete_food(food_name):
 
 @app.route("/modifies")
 def modifies():
-    modifies = list(mongo.db.catergories.find().sort({"use-by-date": 1}))
+    modifies = list(mongo.db.catergories.find().sort('use_by_date', 1))
     return render_template("modifies.html", modifies=modifies)
 
 if __name__ == "__main__":
